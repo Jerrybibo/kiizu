@@ -1,16 +1,45 @@
-# This is a sample Python script.
+import pygame as p
+from constants import *
+from pygame.locals import *
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+window_surface = p.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+p.display.set_caption("Kiizu - for Raymond", APP_ICON)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def menu():
+    menu_background_color = BLACK
+    while 1:
+        window_surface.fill(menu_background_color)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        for event in p.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    p.quit()
+                    exit(0)
+                if event.key in (K_RETURN, K_SPACE):
+                    return
+            if event.type == QUIT:
+                p.quit()
+                exit(0)
+
+        p.display.update()
+
+
+def main():
+    menu()
+    while 1:
+        window_surface.fill(BLACK)
+
+        for event in p.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    p.quit()
+                    exit(0)
+            if event.type == QUIT:
+                p.quit()
+                exit(0)
+
+        p.display.update()
+
+
+main()
