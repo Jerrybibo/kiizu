@@ -1,6 +1,6 @@
 DEBUG = True
-SCREEN_WIDTH, SCREEN_HEIGHT = 1920, 1080
-APP_ICON = "resources/app_icon.jpg"
+SCREEN_WIDTH, SCREEN_HEIGHT = 1280, 720
+APP_ICON_URL = "resources/app_icon.jpg"
 BLACK = (0, 0, 0)
 SALMON = (221, 155, 127)
 LEMON = (255, 254, 227)

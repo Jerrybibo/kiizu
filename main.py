@@ -5,8 +5,12 @@ from random import choice
 from constants import *
 from helpers import create_text
 
-window_surface = p.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-p.display.set_caption("Kiizu - for Raymond", APP_ICON)
+APP_ICON = p.image.load(APP_ICON_URL)
+fullscreen_mode = False
+flags = pygame.FULLSCREEN & fullscreen_mode
+window_surface = p.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), flags)
+p.display.set_caption("Kiizu - for Raymond")
+p.display.set_icon(APP_ICON)
 
 try:
     WORD_LIST_FILE = open("resources/word_list.txt")
@@ -19,6 +23,7 @@ pressed_keys = []
 current_word = ""
 
 clock = p.time.Clock()
+
 
 def menu():
     menu_background_color = MINT
