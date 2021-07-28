@@ -154,7 +154,8 @@ hospital
 hot
 house
 how
-hurt I
+hurt
+I
 ice
 idea
 if
